@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OutlinedCard() {
+export default function OutlinedCard(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
@@ -38,29 +38,29 @@ export default function OutlinedCard() {
               color="textSecondary"
               gutterBottom
             >
-              MY DOCS
+             {props.h1}
             </Typography>
             <Typography variant="h5" component="h2">
-                Insurance
+               {props.title}
             </Typography>
             <Typography className={classes.pos} color="textSecondary">
-                Attachments: avatarimg.jpeg.
+                {props.p}
             </Typography>
             <Typography variant="body2" component="p">
-              Name : Jim
+              {props.name}
               
               <br />
-              Surname : Clarke
+              {props.surname}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small">Learn More</Button>
+            <Button size="small">{props.button}</Button>
           </CardActions>
         </div>
         <div
           style={{
             border: "1px solid lightgrey",
-            width: "200",
+            width: "150",
             height: "250",
             margin: "0 auto",
           }}
